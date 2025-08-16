@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JDSS Youth - Jai Durga Seva Samithi</title>
+  <meta name="description" content="JDSS Youth - Jai Durga Seva Samithi (Kodimail). Since 1997 - Celebrating devotion, culture & youth." />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">JDSS</div>
+        <div>
+          <h1>JDSS Youth – Jai Durga Seva Samithi</h1>
+          <p class="lead">Kodimail, Jagityal District • Since 1997 — Continuing to 2025 & beyond</p>
+        </div>
+      </div>
+      <div class="contact small muted">
+        <div>📞 77940 44674 / 72074 55422</div>
+        <div>📧 pranaykasarapu@gmail.com</div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-card">
+        <span class="pill">Faith • Culture • Youth</span>
+        <h2>Welcome to <strong>JDSS Youth</strong> — Kodimail's heart of devotion & celebration</h2>
+        <p class="muted">We organize Durga Mata & Ganesh Chaturthi festivities — processions, cultural programs, music and youth energy bringing our community together.</p>
+        <div class="actions">
+          <button class="btn primary" onclick="scrollTo('profiles')">Join / Upload Profile</button>
+          <button class="btn ghost" onclick="downloadData()">Download Profiles</button>
+        </div>
+
+        <div class="info" style="margin-top:16px">
+          <div class="grid-2">
+            <div>
+              <strong>Location</strong>
+              <p class="muted small">Kodimail, Jagityal District - 505501</p>
+            </div>
+            <div>
+              <strong>Years Active</strong>
+              <p class="muted small">1997 — 2025 & counting</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:12px" class="timeline">
+          <div class="line"></div>
+          <p class="small muted">From humble devotional beginnings in 1997 to growing cultural celebrations and community service through 2025.</p>
+        </div>
+      </div>
+
+      <aside>
+        <div class="hero-card">
+          <h3>Quick Facts <span class="spark">✨</span></h3>
+          <ul class="muted small">
+            <li>Major events: Durga Puja & Ganesh Chaturthi</li>
+            <li>Highlight: Final day processions with DJ, band & bharath</li>
+            <li>Instagram: <strong>@jdss_ka_murthi</strong></li>
+          </ul>
+
+          <div style="margin-top:12px">
+            <h4 style="margin:0 0 8px">Main Leaders</h4>
+            <div class="leaders" id="main-leaders">
+              <!-- leader cards injected by JS -->
+            </div>
+          </div>
+
+        </div>
+      </aside>
+    </section>
+
+    <section style="margin-top:18px">
+      <h3>Sub Leaders & Team</h3>
+      <div class="leaders" id="sub-leaders"></div>
+    </section>
+
+    <section id="profiles" style="margin-top:18px">
+      <h3>Upload / Edit Two Featured Profiles</h3>
+      <p class="muted small">You can upload two profile photos + name & role. Data will be saved locally in your browser and can be downloaded.</p>
+      <div class="profiles">
+        <div class="profile-card">
+          <div style="display:flex;gap:12px;align-items:center">
+            <div>
+              <img id="avatar1" class="avatar" src="" alt="avatar1" onerror="this.style.display='none'">
+            </div>
+            <div style="flex:1">
+              <label class="small muted">Name</label>
+              <input id="name1" type="text" placeholder="Enter name" style="width:100%;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:#fff;margin-top:6px">
+              <label class="small muted" style="margin-top:8px;display:block">Role</label>
+              <input id="role1" type="text" placeholder="e.g. Sub Leader" style="width:100%;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:#fff;margin-top:6px">
+            </div>
+          </div>
+
+          <div style="margin-top:10px" class="upload">
+            <label for="file1" style="cursor:pointer">📁 Click to upload or drag & drop here</label>
+            <input id="file1" type="file" accept="image/*">
+            <div style="margin-top:8px;display:flex;gap:8px;justify-content:flex-end">
+              <button class="btn ghost" onclick="saveProfile(1)">Save</button>
+              <button class="btn" onclick="clearProfile(1)">Clear</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-card">
+          <div style="display:flex;gap:12px;align-items:center">
+            <div>
+              <img id="avatar2" class="avatar" src="" alt="avatar2" onerror="this.style.display='none'">
+            </div>
+            <div style="flex:1">
+              <label class="small muted">Name</label>
+              <input id="name2" type="text" placeholder="Enter name" style="width:100%;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:#fff;margin-top:6px">
+              <label class="small muted" style="margin-top:8px;display:block">Role</label>
+              <input id="role2" type="text" placeholder="e.g. Main Leader" style="width:100%;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:#fff;margin-top:6px">
+            </div>
+          </div>
+
+          <div style="margin-top:10px" class="upload">
+            <label for="file2" style="cursor:pointer">📁 Click to upload or drag & drop here</label>
+            <input id="file2" type="file" accept="image/*">
+            <div style="margin-top:8px;display:flex;gap:8px;justify-content:flex-end">
+              <button class="btn ghost" onclick="saveProfile(2)">Save</button>
+              <button class="btn" onclick="clearProfile(2)">Clear</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:12px" class="profiles" id="saved-profiles">
+        <!-- saved profiles render here -->
+      </div>
+    </section>
+
+    <footer>
+      <div>© JDSS Youth – Jai Durga Seva Samithi • Kodimail</div>
+      <div class="small muted">Made with devotion • Designed for easy GitHub copy-paste (separate files).</div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
